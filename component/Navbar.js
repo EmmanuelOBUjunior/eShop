@@ -20,7 +20,7 @@ function Navbar() {
                 </li>
                 <li className="nav-item active">
                     <Link href="/signin">
-                    <a className="nav-link"><i className ="fas fa-sign-in-alt"/>Sign</a>
+                    <a className="nav-link"><i className ="fas fa-sign-in-alt"/>Sign In</a>
                     </Link>
                 </li>
 
