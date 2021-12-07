@@ -1,8 +1,18 @@
 /* eslint-disable jsx-a11y/role-supports-aria-props */
 import React from 'react'
 import Link from 'next/link'
+import {useRouter} from 'next/router'
 
 function Navbar() {
+        const router = useRouter()
+        const isActive = (r) =>{
+            if(r === router.pathname){
+                return ' active'
+            }
+            else{
+                return ''
+            }
+        }
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <Link href="/">
@@ -13,14 +23,14 @@ function Navbar() {
             </button>
             <div className="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                 <ul className="navbar-nav">
-                <li className="nav-item active">
+                <li className="nav-item ">
                     <Link href="/cart">
-                    <a className="nav-link"><i className="fas fa-shopping-cart"></i>Cart</a>
+                    <a className={"nav-link" + isActive('/cart')}><i className="fas fa-shopping-cart"></i>Cart</a>
                     </Link>
                 </li>
-                <li className="nav-item active">
+                <li className="nav-item ">
                     <Link href="/signin">
-                    <a className="nav-link"><i className ="fas fa-sign-in-alt"/>Sign In</a>
+                    <a className={"nav-link" + isActive('/signin')}><i className ="fas fa-sign-in-alt"/>Sign In</a>
                     </Link>
                 </li>
 
